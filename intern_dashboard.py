@@ -186,8 +186,8 @@ def show_market_page(df):
     else:
         st.markdown("**💡 Insight**: No SKU count data available for retailers.")
 
-    # --- Average Silhouette Price by Brand ---
-    st.subheader("Average Silhouette Price by Brand")
+    # --- Average Price by Brand ---
+    st.subheader("Average Price by Brand")
     avg_price = df.groupby('Brand')['Price'].mean().sort_values(ascending=False).reset_index()
     fig3 = px.bar(avg_price, x='Brand', y='Price', color='Brand', height=500)
     st.plotly_chart(fig3, use_container_width=True)
